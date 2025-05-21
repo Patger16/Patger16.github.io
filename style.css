@@ -1,0 +1,327 @@
+/* Globale Styles & Variablen */
+:root {
+    --primary-color: #2a9d8f;
+    --secondary-color: #e9c46a;
+    --background-color: #f8f9fa;
+    --surface-color: #ffffff;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --danger-color: #e76f51;
+    --success-color: #2a9d8f; /* Gleich wie Primary für Einfachheit */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex-grow: 1; /* Nimmt verfügbaren Platz */
+    text-align: center; /* Zentriert Titel, wenn Button da ist */
+}
+
+.nav-toggle-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin-right: 1rem; /* Abstand zum Titel */
+}
+
+.main-nav {
+    background-color: #343a40;
+    padding: 0.5rem 0;
+}
+
+.main-nav.hidden { /* Klasse zum Ausblenden für Mobile */
+    display: none;
+}
+
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Mobile first: untereinander */
+}
+
+.main-nav ul li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #495057;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: var(--primary-color);
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+    .nav-toggle-button {
+        display: none; /* Button auf Desktop ausblenden */
+    }
+    .main-nav {
+        display: block !important; /* Immer anzeigen */
+    }
+    .main-nav ul {
+        flex-direction: row; /* Nebeneinander auf Desktop */
+        justify-content: center;
+    }
+    .main-nav ul li a {
+        border-bottom: none;
+        border-right: 1px solid #495057;
+    }
+    .main-nav ul li:last-child a {
+        border-right: none;
+    }
+}
+
+
+.main-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px auto; /* Zentriert und mit Abstand */
+}
+
+.site-footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Komponenten-ähnliche Styles */
+.card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="search"],
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    box-sizing: border-box; /* Wichtig für 100% Breite mit Padding */
+    font-size: 1rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.button-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+.button-primary:hover {
+    background-color: #248277; /* Etwas dunkler */
+    border-color: #248277;
+}
+
+.button-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-color: var(--secondary-color);
+}
+
+.button-danger {
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.tab-bar {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.tab-button {
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    border-bottom: 2px solid transparent; /* Platzhalter für aktiven Zustand */
+    margin-bottom: -2px; /* Überlappt mit .tab-bar Border */
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    height: 10px;
+    margin: 0.5rem 0;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 0%; /* Wird per JS gesetzt */
+    border-radius: 0.25rem;
+    transition: width 0.3s ease;
+}
+
+/* Einfache Liste */
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+}
+.styled-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+.styled-list li:last-child {
+    border-bottom: none;
+}
+
+/* Modal für Rezeptanzeige */
+.modal {
+    display: none; /* Standardmäßig versteckt */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparenter Hintergrund */
+}
+.modal-content {
+    background-color: var(--surface-color);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+.modal-close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Notification Area */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Verhindert Klicks, wenn nicht sichtbar */
+}
+.notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Endposition */
+    pointer-events: auto;
+}
+.notification.success { background-color: var(--success-color); }
+.notification.error { background-color: var(--danger-color); }
+.notification.info { background-color: #17a2b8; } /* Bootstrap info color */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+th {
+    background-color: #f8f9fa;
+}
