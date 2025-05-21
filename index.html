@@ -3,81 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dein Fitness Tracker</title>
+    <title>Dein Fitness Tracker - Ausführlich</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    </head>
-<body class="mdc-typography">
+</head>
+<body>
 
-    <header class="mdc-top-app-bar">
-        <div class="mdc-top-app-bar__row">
-            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                <button id="menu-button" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
-                <span class="mdc-top-app-bar__title">Fitness Tracker</span>
-            </section>
-        </div>
+    <header class="site-header">
+        <button id="nav-toggle" class="nav-toggle-button" aria-label="Menü umschalten" aria-expanded="false">☰ Menü</button>
+        <h1>Fitness Tracker</h1>
     </header>
 
-    <aside class="mdc-drawer mdc-drawer--modal">
-        <div class="mdc-drawer__header">
-            <h3 class="mdc-drawer__title">Menü</h3>
-            <h6 class="mdc-drawer__subtitle">Hallo Benutzer!</h6>
-        </div>
-        <div class="mdc-drawer__content">
-            <nav class="mdc-list">
-                <a class="mdc-list-item mdc-list-item--activated" href="#" data-section="dashboard">
-                    <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dashboard</i>
-                    <span class="mdc-list-item__text">Dashboard</span>
-                </a>
-                <a class="mdc-list-item" href="#" data-section="data-goals">
-                    <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">assignment_ind</i>
-                    <span class="mdc-list-item__text">Meine Daten & Ziele</span>
-                </a>
-                <a class="mdc-list-item" href="#" data-section="calorie-tracker">
-                    <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">fastfood</i>
-                    <span class="mdc-list-item__text">Kalorienzufuhr</span>
-                </a>
-                <a class="mdc-list-item" href="#" data-section="meal-plan">
-                    <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">restaurant_menu</i>
-                    <span class="mdc-list-item__text">Essensplan</span>
-                </a>
-                <a class="mdc-list-item" href="#" data-section="recipes">
-                    <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">menu_book</i>
-                    <span class="mdc-list-item__text">Rezepte</span>
-                </a>
-                <a class="mdc-list-item" href="#" data-section="progress">
-                    <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">show_chart</i>
-                    <span class="mdc-list-item__text">Fortschritt & Prognose</span>
-                </a>
-            </nav>
-        </div>
-    </aside>
-    <div class="mdc-drawer-scrim"></div>
+    <nav class="main-nav hidden" id="main-navigation"> <ul>
+            <li><a href="#" class="nav-link active" data-section="dashboard-section">Dashboard</a></li>
+            <li><a href="#" class="nav-link" data-section="data-goals-section">Meine Daten & Ziele</a></li>
+            <li><a href="#" class="nav-link" data-section="calorie-tracker-section">Kalorienzufuhr</a></li>
+            <li><a href="#" class="nav-link" data-section="meal-plan-section">Essensplan</a></li>
+            <li><a href="#" class="nav-link" data-section="recipes-section">Rezepte</a></li>
+            <li><a href="#" class="nav-link" data-section="progress-section">Fortschritt</a></li>
+        </ul>
+    </nav>
 
     <main class="main-content" id="main-content-area">
-        </main>
 
-    <div id="snackbar" class="mdc-snackbar">
-        <div class="mdc-snackbar__surface">
-            <div class="mdc-snackbar__label" role="status" aria-live="polite">
-                Nachrichtentext.
+        <section id="dashboard-section" class="page-section">
+            <h2 class="page-title">Dashboard</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3 class="card-title">Gewichtsfortschritt</h3>
+                    <p>Aktuell: <span id="dashboard-current-weight">--</span> kg</p>
+                    <p>Ziel: <span id="dashboard-goal-weight">--</span> kg</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="dashboard-weight-progress" style="width: 0%;"></div>
+                    </div>
+                    <p id="dashboard-weight-prognosis" class="small-text">Prognose wird berechnet...</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Heutige Kalorien</h3>
+                    <p>Aufgenommen: <span id="dashboard-calories-today">0</span> kcal</p>
+                    <p>Ziel (TDEE): <span id="dashboard-tdee-today">--</span> kcal</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="dashboard-calorie-progress" style="width: 0%;"></div>
+                    </div>
+                    <button class="button button-primary" data-nav-to-section="calorie-tracker-section" style="margin-top:10px;">Eingabe</button>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">BMI & Status</h3>
+                    <p>BMI: <span id="dashboard-bmi">--</span></p>
+                    <p>Kategorie: <span id="dashboard-bmi-category">--</span></p>
+                </div>
+
+                 <div class="card">
+                    <h3 class="card-title">Heutiger Essensplan</h3>
+                    <div id="dashboard-meal-plan-summary">
+                        <p>Noch kein Essensplan für heute geladen oder ausgewählt.</p>
+                    </div>
+                    <button class="button button-primary" data-nav-to-section="meal-plan-section" style="margin-top:10px;">Details</button>
+                </div>
             </div>
-            <div class="mdc-snackbar__actions">
-                <button type="button" class="mdc-button mdc-snackbar__action">Schließen</button>
+        </section>
+
+        <section id="data-goals-section" class="page-section section-hidden">
+            <h2 class="page-title">Meine Daten & Ziele</h2>
+            <form id="data-goals-form" class="card">
+                <div class="form-group">
+                    <label for="age">Alter (Jahre)</label>
+                    <input type="number" id="age" name="age" required min="10" max="120" placeholder="z.B. 30">
+                </div>
+                <div class="form-group">
+                    <label for="current-weight">Aktuelles Gewicht (kg)</label>
+                    <input type="number" id="current-weight" name="currentWeight" step="0.1" required min="20" placeholder="z.B. 75.5">
+                </div>
+                <div class="form-group">
+                    <label for="height">Körpergröße (cm)</label>
+                    <input type="number" id="height" name="height" required min="100" max="250" placeholder="z.B. 180">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Geschlecht</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Bitte wählen...</option>
+                        <option value="male">Männlich</option>
+                        <option value="female">Weiblich</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goal-weight">Zielgewicht (kg)</label>
+                    <input type="number" id="goal-weight" name="goalWeight" step="0.1" required min="20" placeholder="z.B. 70">
+                </div>
+                <div class="form-group">
+                    <label for="activity-level">Aktivitätslevel</label>
+                    <select id="activity-level" name="activityLevel" required>
+                        <option value="" disabled selected>Bitte wählen...</option>
+                        <option value="1.2">Wenig/Keine Aktivität (Bürojob)</option>
+                        <option value="1.375">Leichte Aktivität (leichtes Training 1-3 T./W.)</option>
+                        <option value="1.55">Moderate Aktivität (moderates Training 3-5 T./W.)</option>
+                        <option value="1.725">Hohe Aktivität (hartes Training 6-7 T./W.)</option>
+                        <option value="1.9">Sehr hohe Aktivität (Profisport, körperl. Job)</option>
+                    </select>
+                </div>
+                <button type="submit" class="button button-primary">Speichern & Berechnen</button>
+            </form>
+
+            <div id="calculated-results" class="card" style="margin-top: 20px; display:none;"> <h3 class="card-title">Berechnete Werte</h3>
+                <p>BMI: <strong id="bmi-value">--</strong> (<span id="bmi-category">--</span>)</p>
+                <p>Grundumsatz (BMR): <strong id="bmr-value">--</strong> kcal/Tag</p>
+                <p>Gesamtumsatz (TDEE): <strong id="tdee-value">--</strong> kcal/Tag</p>
+                <div id="training-recommendation" style="margin-top:1rem;">
+                    <p><em>Trainingsempfehlungen erscheinen hier nach Berechnung.</em></p>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section id="calorie-tracker-section" class="page-section section-hidden">
+            <h2 class="page-title">Kalorienzufuhr Heute (<span id="current-date-calorie">Datum</span>)</h2>
+            <div class="card">
+                <h3 class="card-title">Ziel für heute: <span id="calorie-target-today">--</span> kcal</h3>
+                <p>Bereits aufgenommen: <strong id="calories-consumed-today">0</strong> kcal</p>
+                <p>Verbleibend: <strong id="calories-remaining-today">--</strong> kcal</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="daily-calorie-progress" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Mahlzeit hinzufügen</h3>
+                <form id="add-meal-form">
+                    <div class="form-group">
+                        <label for="meal-description">Beschreibung (z.B. Apfel, Proteinshake)</label>
+                        <input type="text" id="meal-description" required placeholder="Was hast du gegessen?">
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-calories">Kalorien (kcal)</label>
+                        <input type="number" id="meal-calories" required min="0" placeholder="z.B. 150">
+                    </div>
+                    <button type="submit" class="button button-primary">Hinzufügen</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Heutige Mahlzeiten</h3>
+                <ul id="todays-meals-list" class="styled-list">
+                    <li id="no-meals-today">Noch keine Mahlzeiten für heute erfasst.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="meal-plan-section" class="page-section section-hidden">
+            <h2 class="page-title">Wöchentlicher Essensplan</h2>
+            <div class="tab-bar" id="meal-plan-tabs">
+                <p>Lade Essenspläne...</p>
+            </div>
+
+            <div id="meal-plan-details-container">
+                <p>Bitte wähle oben einen Essensplan aus, um die Details für die Woche anzuzeigen.</p>
+            </div>
+
+            <div id="recipe-modal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close-button" id="close-modal-button" aria-label="Schließen">&times;</span>
+                    <h3 id="modal-recipe-name" class="card-title">Rezeptname</h3>
+                    <div id="modal-recipe-content">
+                        <p>Rezeptdetails laden...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes-section" class="page-section section-hidden">
+            <h2 class="page-title">Rezeptsammlung (Kein Schweinefleisch)</h2>
+            <div class="form-group">
+                <label for="recipe-search" class="sr-only">Rezepte durchsuchen</label> <input type="search" id="recipe-search" placeholder="Rezepte durchsuchen...">
+            </div>
+            <div id="recipe-list-container" class="grid-container">
+                <p>Lade Rezepte oder suche nach einem Rezept.</p>
+                </div>
+        </section>
+
+        <section id="progress-section" class="page-section section-hidden">
+            <h2 class="page-title">Fortschritt & Prognose</h2>
+            <div class="card">
+                <h3 class="card-title">Gewichtsverlauf</h3>
+                <div id="weight-chart-container" style="height:300px; position:relative;"> <canvas id="weightChart"></canvas>
+                </div>
+                <p>Aktuelle Prognose: <span id="progress-prognosis">Berechnung ausstehend oder nicht genügend Daten.</span></p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">BMI Verlauf</h3>
+                 <div id="bmi-chart-container" style="height:300px; position:relative;">
+                    <canvas id="bmiChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Fortschrittsdaten Historie</h3>
+                <button id="add-progress-entry-button" class="button button-secondary">Neuen Gewichtseintrag hinzufügen</button>
+                <div class="table-container" style="margin-top:1rem; overflow-x:auto;"> <table id="progress-table">
+                        <thead>
+                            <tr>
+                                <th>Datum</th>
+                                <th>Gewicht (kg)</th>
+                                <th>BMI</th>
+                                <th>Aktion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="progress-table-body">
+                            <tr><td colspan="4" style="text-align:center;">Noch keine Einträge vorhanden.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year">2025</span> Dein Fitness Tracker</p>
+    </footer>
+
+    <div id="notification-area" class="notification" aria-live="assertive"></div>
 
     <script src="js/data.js"></script>
     <script src="js/calculations.js"></script>
     <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Kleines Skript, um das aktuelle Jahr im Footer dynamisch zu setzen
+        // und die section-hidden Klasse für JS-Interaktion zu definieren
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Verstecke alle Sektionen außer der ersten (Dashboard) initial per JS,
+            // falls CSS das nicht schon macht. Dies stellt sicher, dass auch ohne CSS
+            // erstmal nur eine Sektion sichtbar ist (Fallback).
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach((section, index) => {
+                if (index === 0) { // Erste Sektion (Dashboard)
+                    section.classList.remove('section-hidden');
+                } else {
+                    section.classList.add('section-hidden');
+                }
+            });
+
+            // Nav Toggle Funktionalität
+            const navToggle = document.getElementById('nav-toggle');
+            const mainNav = document.getElementById('main-navigation');
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    const isExpanded = mainNav.classList.toggle('hidden');
+                    navToggle.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+        });
+    </script>
+    <style>
+        .section-hidden {
+            display: none !important; /* !important, um sicherzustellen, dass es greift, falls andere display-Regeln existieren */
+        }
+        .sr-only { /* Für Screenreader-only Text, falls benötigt */
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+
+</body>
+</html>
     <script src="js/app.js"></script>
 </body>
 </html>
