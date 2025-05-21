@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Fitness & Nutrition Plan" data-de="Fitness- & Ernährungsplan">Fitness- & Ernährungsplan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #111827;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 1em;
+            color: #065f46; /* Darker green for main title */
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #10B981; /* Emerald-600 */
+            padding-bottom: 0.3em;
+            margin-top: 1.5em;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #059669; /* Green-600 */
+        }
+        p, li, table {
+            font-size: 1.1em;
+            margin-bottom: 0.5em;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            background-color: #D1FAE5; /* Green-100 */
+            padding: 10px;
+            border-left: 4px solid #10B981; /* Green-500 */
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+        th, td {
+            border: 1px solid #e5e7eb; /* Gray-200 */
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f3f4f6; /* Gray-100 */
+        }
+        .note {
+            font-style: italic;
+            color: #4b5563; /* Gray-600 */
+        }
+        .important {
+            font-weight: bold;
+            color: #DC2626; /* Red-600 */
+        }
+        .lang-switcher button {
+            background-color: #059669;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .lang-switcher button:hover {
+            background-color: #047857;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <div class="lang-switcher text-right mb-4">
+            <button onclick="setLanguage('de')" class="mr-2" data-en="German" data-de="Deutsch">Deutsch</button>
+            <button onclick="setLanguage('en')" data-en="English" data-de="Englisch">Englisch</button>
+        </div>
+
+        <h1 data-en="Fitness & Nutrition Plan" data-de="Fitness- & Ernährungsplan">Fitness- & Ernährungsplan</h1>
+
+        <section class="card">
+            <h2 data-en="Your Plan (27 years, 187 cm, 94 kg)" data-de="Dein Plan (27 Jahre, 187 cm, 94 kg)">Dein Plan (27 Jahre, 187 cm, 94 kg)</h2>
+            <p class="font-semibold" data-en="Goal: Weight Loss & Muscle Gain" data-de="Ziel: Gewichtsreduktion & Muskelaufbau">Ziel: Gewichtsreduktion & Muskelaufbau</p>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="Your Body Mass Index (BMI):" data-de="Dein Body-Mass-Index (BMI):">Dein Body-Mass-Index (BMI):</h3>
+                <p><span data-en="Your BMI is approx." data-de="Dein BMI beträgt ca.">Dein BMI beträgt ca.</span> <strong>26.88 kg/m²</strong>. <span data-en="This falls into the 'overweight' category." data-de="Dies liegt im Bereich 'Übergewicht'.">Dies liegt im Bereich "Übergewicht".</span></p>
+            </div>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="Your Estimated Basal Metabolic Rate (BMR):" data-de="Dein geschätzter Grundumsatz (BMR):">Dein geschätzter Grundumsatz (BMR):</h3>
+                <p data-en="Using the Mifflin-St Jeor formula: (10 * 94 kg) + (6.25 * 187 cm) - (5 * 27 years) + 5 = " data-de="Mit der Mifflin-St Jeor Formel: (10 * 94 kg) + (6.25 * 187 cm) - (5 * 27 Jahre) + 5 = ">Mit der Mifflin-St Jeor Formel: (10 * 94 kg) + (6.25 * 187 cm) - (5 * 27 Jahre) + 5 = </p><p><strong>1978.75 kcal/Tag</strong>.</p>
+                <p class="note" data-en="This is the energy your body needs at rest." data-de="Das ist die Energiemenge, die dein Körper im Ruhezustand benötigt.">Das ist die Energiemenge, die dein Körper im Ruhezustand benötigt.</p>
+            </div>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="Your Estimated Total Daily Energy Expenditure (TDEE):" data-de="Dein geschätzter täglicher Kalorienbedarf (TDEE):">Dein geschätzter täglicher Kalorienbedarf (TDEE):</h3>
+                <p data-en="For moderate activity (3-5 workouts/week): 1978.75 kcal * 1.55 = " data-de="Bei moderater Aktivität (3-5 Trainingseinheiten/Woche): 1978.75 kcal * 1.55 = ">Bei moderater Aktivität (3-5 Trainingseinheiten/Woche): 1978.75 kcal * 1.55 = </p><p><strong>3067 kcal/Tag</strong> <span data-en="(rounded)." data-de="(gerundet).">(gerundet).</span></p>
+            </div>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="Recommended Calorie Intake for Weight Loss:" data-de="Empfohlene Kalorienzufuhr zum Abnehmen:">Empfohlene Kalorienzufuhr zum Abnehmen:</h3>
+                <p data-en="To lose weight healthily (approx. 0.5 kg per week), a calorie deficit of approx. 500 kcal per day is recommended." data-de="Um gesund abzunehmen (ca. 0.5 kg pro Woche), wird ein Kaloriendefizit von ca. 500 kcal pro Tag empfohlen.">Um gesund abzunehmen (ca. 0.5 kg pro Woche), wird ein Kaloriendefizit von ca. 500 kcal pro Tag empfohlen.</p>
+                <p><span data-en="Your target calorie intake:" data-de="Deine Ziel-Kalorienaufnahme:">Deine Ziel-Kalorienaufnahme:</span> <strong>ca. 2500 - 2600 kcal/Tag</strong>.</p>
+                <p class="note" data-en="Adjust this based on your progress and well-being." data-de="Passe dies basierend auf deinem Fortschritt und Wohlbefinden an.">Passe dies basierend auf deinem Fortschritt und Wohlbefinden an.</p>
+            </div>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="Target Weight (with approx. 10% body fat):" data-de="Zielgewicht (mit ca. 10% Körperfett):">Zielgewicht (mit ca. 10% Körperfett):</h3>
+                <p data-en="A realistic target weight could be between " data-de="Ein realistisches Zielgewicht könnte zwischen ">Ein realistisches Zielgewicht könnte zwischen </p><p><strong>80-84 kg</strong> <span data-en=". This means a weight loss of " data-de="liegen. Dies bedeutet einen Gewichtsverlust von ">liegen. Dies bedeutet einen Gewichtsverlust von </span><strong>10-14 kg</strong>. <span data-en="Remember that muscle gain can affect the scale weight." data-de="Denke daran, dass Muskelaufbau das Gewicht auf der Waage beeinflussen kann.">Denke daran, dass Muskelaufbau das Gewicht auf der Waage beeinflussen kann.</span></p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 data-en="Plan for your Brother (194 cm, 80 kg)" data-de="Plan für deinen Bruder (194 cm, 80 kg)">Plan für deinen Bruder (194 cm, 80 kg)</h2>
+            <p class="font-semibold" data-en="Goal: Muscle Gain" data-de="Ziel: Muskelaufbau">Ziel: Muskelaufbau</p>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="His Body Mass Index (BMI):" data-de="Sein Body-Mass-Index (BMI):">Sein Body-Mass-Index (BMI):</h3>
+                <p><span data-en="His BMI is approx." data-de="Sein BMI beträgt ca.">Sein BMI beträgt ca.</span> <strong>21.26 kg/m²</strong>. <span data-en="This falls into the healthy normal weight range." data-de="Dies liegt im gesunden Normalgewichtsbereich.">Dies liegt im gesunden Normalgewichtsbereich.</span></p>
+            </div>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="His Estimated Basal Metabolic Rate (BMR):" data-de="Sein geschätzter Grundumsatz (BMR):">Sein geschätzter Grundumsatz (BMR):</h3>
+                <p data-en="Assumed age: 25 years (please adjust if different)." data-de="Angenommenes Alter: 25 Jahre (bitte anpassen, falls anders).">Angenommenes Alter: 25 Jahre (bitte anpassen, falls anders).</p>
+                <p data-en="Using the Mifflin-St Jeor formula: (10 * 80 kg) + (6.25 * 194 cm) - (5 * 25 years) + 5 = " data-de="Mit der Mifflin-St Jeor Formel: (10 * 80 kg) + (6.25 * 194 cm) - (5 * 25 Jahre) + 5 = ">Mit der Mifflin-St Jeor Formel: (10 * 80 kg) + (6.25 * 194 cm) - (5 * 25 Jahre) + 5 = </p><p><strong>1892.5 kcal/Tag</strong>.</p>
+            </div>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="His Estimated Total Daily Energy Expenditure (TDEE):" data-de="Sein geschätzter täglicher Kalorienbedarf (TDEE):">Sein geschätzter täglicher Kalorienbedarf (TDEE):</h3>
+                <p data-en="For moderate activity (3-5 workouts/week): 1892.5 kcal * 1.55 = " data-de="Bei moderater Aktivität (3-5 Trainingseinheiten/Woche): 1892.5 kcal * 1.55 = ">Bei moderater Aktivität (3-5 Trainingseinheiten/Woche): 1892.5 kcal * 1.55 = </p><p><strong>2933 kcal/Tag</strong> <span data-en="(rounded)." data-de="(gerundet).">(gerundet).</span></p>
+            </div>
+
+            <div class="highlight">
+                <h3 class="font-semibold" data-en="Recommended Calorie Intake for Muscle Gain:" data-de="Empfohlene Kalorienzufuhr für Muskelaufbau:">Empfohlene Kalorienzufuhr für Muskelaufbau:</h3>
+                <p data-en="For muscle gain, a slight calorie surplus of approx. 300-500 kcal per day is recommended to provide the body with enough energy for muscle growth." data-de="Für Muskelaufbau wird ein leichter Kalorienüberschuss von ca. 300-500 kcal pro Tag empfohlen, um dem Körper genügend Energie für den Muskelwachstum zu geben.">Für Muskelaufbau wird ein leichter Kalorienüberschuss von ca. 300-500 kcal pro Tag empfohlen, um dem Körper genügend Energie für den Muskelwachstum zu geben.</p>
+                <p><span data-en="His target calorie intake:" data-de="Seine Ziel-Kalorienaufnahme:">Seine Ziel-Kalorienaufnahme:</span> <strong>ca. 3200 - 3400 kcal/Tag</strong>.</p>
+                <p class="note" data-en="Observe and adjust as needed." data-de="Auch hier gilt: Beobachten und bei Bedarf anpassen.">Auch hier gilt: Beobachten und bei Bedarf anpassen.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 data-en="Weekly Training Plan (Example)" data-de="Wöchentlicher Trainingsplan (Beispiel)">Wöchentlicher Trainingsplan (Beispiel)</h2>
+            <p data-en="This plan is a suggestion and can be adjusted to your individual needs and progress. Regularity and enjoyment of movement are important." data-de="Dieser Plan ist ein Vorschlag und kann an eure individuellen Bedürfnisse und Fortschritte angepasst werden. Wichtig ist Regelmäßigkeit und Freude an der Bewegung.">Dieser Plan ist ein Vorschlag und kann an eure individuellen Bedürfnisse und Fortschritte angepasst werden. Wichtig ist Regelmäßigkeit und Freude an der Bewegung.</p>
+
+            <p class="font-semibold" data-en="Basics:" data-de="Grundlagen:">Grundlagen:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li data-en="Warm-up (5-10 min.): Before each session (e.g., jumping jacks, arm circles, bodyweight squats, light jump rope)." data-de="Aufwärmen (5-10 Min.): Vor jeder Einheit (z.B. Hampelmänner, Armkreisen, Kniebeugen ohne Gewicht, leichtes Seilspringen).">Aufwärmen (5-10 Min.): Vor jeder Einheit (z.B. Hampelmänner, Armkreisen, Kniebeugen ohne Gewicht, leichtes Seilspringen).</li>
+                <li data-en="Cool-down (5-10 min.): After each session (stretching exercises for the worked muscle groups)." data-de="Abkühlen (5-10 Min.): Nach jeder Einheit (Dehnübungen für die beanspruchten Muskelgruppen).">Abkühlen (5-10 Min.): Nach jeder Einheit (Dehnübungen für die beanspruchten Muskelgruppen).</li>
+                <li data-en="Progression: Try to increase slightly each week (more reps, longer duration, shorter breaks)." data-de="Progression: Versucht, euch jede Woche leicht zu steigern (mehr Wiederholungen, längere Dauer, kürzere Pausen).">Progression: Versucht, euch jede Woche leicht zu steigern (mehr Wiederholungen, längere Dauer, kürzere Pausen).</li>
+                <li data-en="Listen to your body: Pause if you feel pain and don't overdo it, especially at the beginning." data-de="Hört auf euren Körper: Pausiert bei Schmerzen und überfordert euch nicht, besonders am Anfang.">Hört auf euren Körper: Pausiert bei Schmerzen und überfordert euch nicht, besonders am Anfang.</li>
+            </ul>
+
+            <h3 class="mt-4" data-en="Training Days (e.g., Monday, Wednesday, Friday):" data-de="Trainingstage (z.B. Montag, Mittwoch, Freitag):">Trainingstage (z.B. Montag, Mittwoch, Freitag):</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-semibold text-lg" data-en="Strength & Endurance Mix" data-de="Kraft & Ausdauer Mix">Kraft & Ausdauer Mix</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li data-en="Push-ups: 3 sets of as many reps as possible (AMRAP) with good form. If regular push-ups are too difficult, start with knee push-ups or against a wall/elevated surface." data-de="Liegestütze: 3 Sätze à so viele Wiederholungen wie möglich (AMRAP - As Many Reps As Possible) mit guter Form. Wenn normale Liegestütze zu schwer sind, startet mit Knie-Liegestützen oder gegen eine Wand/erhöhte Fläche.">Liegestütze: 3 Sätze à so viele Wiederholungen wie möglich (AMRAP - As Many Reps As Possible) mit guter Form. Wenn normale Liegestütze zu schwer sind, startet mit Knie-Liegestützen oder gegen eine Wand/erhöhte Fläche.</li>
+                        <li data-en="Bodyweight Squats: 3 sets of 15-20 repetitions. Pay attention to correct execution (straight back, knees not beyond toes)." data-de="Kniebeugen (Bodyweight Squats): 3 Sätze à 15-20 Wiederholungen. Achtet auf eine korrekte Ausführung (Rücken gerade, Knie nicht über die Zehenspitzen).">Kniebeugen (Bodyweight Squats): 3 Sätze à 15-20 Wiederholungen. Achtet auf eine korrekte Ausführung (Rücken gerade, Knie nicht über die Zehenspitzen).</li>
+                        <li data-en="Lunges: 3 sets of 10-12 repetitions per leg." data-de="Ausfallschritte (Lunges): 3 Sätze à 10-12 Wiederholungen pro Bein.">Ausfallschritte (Lunges): 3 Sätze à 10-12 Wiederholungen pro Bein.</li>
+                        <li data-en="Plank: 3 sets, hold as long as possible (goal: 30-60 seconds)." data-de="Plank (Unterarmstütz): 3 Sätze, so lange wie möglich halten (Ziel: 30-60 Sekunden).">Plank (Unterarmstütz): 3 Sätze, so lange wie möglich halten (Ziel: 30-60 Sekunden).</li>
+                        <li data-en="Jump Rope: 10-15 minutes. You can do intervals (e.g., 1 minute jumping, 30 seconds rest) or try to jump continuously." data-de="Seilspringen: 10-15 Minuten. Ihr könnt Intervalle machen (z.B. 1 Minute springen, 30 Sekunden Pause) oder versuchen, am Stück zu springen.">Seilspringen: 10-15 Minuten. Ihr könnt Intervalle machen (z.B. 1 Minute springen, 30 Sekunden Pause) oder versuchen, am Stück zu springen.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg" data-en="Cardio Focus (on one of the training days or additionally)" data-de="Cardio-Fokus (an einem der Trainingstage oder zusätzlich)">Cardio-Fokus (an einem der Trainingstage oder zusätzlich)</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li data-en="Running/Jogging:" data-de="Laufen/Joggen:">Laufen/Joggen:
+                            <ul>
+                                <li data-en="You (fat burning focus): Start with 20-30 minutes of moderate pace. You should still be able to talk during this. Gradually increase duration." data-de="Du (Fokus Fettverbrennung): Beginne mit 20-30 Minuten moderatem Tempo. Du solltest dich dabei noch unterhalten können. Steigere die Dauer langsam.">Du (Fokus Fettverbrennung): Beginne mit 20-30 Minuten moderatem Tempo. Du solltest dich dabei noch unterhalten können. Steigere die Dauer langsam.</li>
+                                <li data-en="Your brother (endurance/muscle gain focus): Can also run 20-30 minutes, possibly at higher intensity or with intervals (e.g., 1 minute fast, 2 minutes easy)." data-de="Dein Bruder (Fokus Ausdauer/Muskelaufbau): Kann ebenfalls 20-30 Minuten laufen, eventuell mit höherer Intensität oder Intervallen (z.B. 1 Minute schnell, 2 Minuten locker).">Dein Bruder (Fokus Ausdauer/Muskelaufbau): Kann ebenfalls 20-30 Minuten laufen, eventuell mit höherer Intensität oder Intervallen (z.B. 1 Minute schnell, 2 Minuten locker).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="mt-4" data-en="Rest and Active Recovery Days (the remaining 4 days):" data-de="Ruhe- und aktive Erholungstage (die restlichen 4 Tage):">Ruhe- und aktive Erholungstage (die restlichen 4 Tage):</h3>
+            <ul class="list-disc list-inside ml-4">
+                <li data-en="At least 1-2 complete rest days per week." data-de="Mindestens 1-2 komplette Ruhetage pro Woche.">Mindestens 1-2 komplette Ruhetage pro Woche.</li>
+                <li data-en="On other days: Active recovery like walking, light cycling, or stretching exercises." data-de="An den anderen Tagen: Aktive Erholung wie Spazierengehen, leichtes Fahrradfahren oder Dehnübungen.">An den anderen Tagen: Aktive Erholung wie Spazierengehen, leichtes Fahrradfahren oder Dehnübungen.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2 data-en="Nutrition Fundamentals" data-de="Ernährungsgrundlagen">Ernährungsgrundlagen</h2>
+            <p data-en="A balanced diet is crucial for your goals. Here are some basic principles:" data-de="Eine ausgewogene Ernährung ist entscheidend für eure Ziele. Hier einige Grundprinzipien:">Eine ausgewogene Ernährung ist entscheidend für eure Ziele. Hier einige Grundprinzipien:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>
+                    <strong data-en="Proteins:" data-de="Proteine:">Proteine:</strong> <span data-en="Important for muscle building and maintenance." data-de="Wichtig für Muskelaufbau und -erhalt.">Wichtig für Muskelaufbau und -erhalt.</span>
+                    <ul>
+                        <li data-en="Good sources: Chicken breast, turkey, fish (salmon, tuna), eggs, low-fat quark, skyr, tofu, lentils, beans, chickpeas, protein powder (whey, casein, plant-based)." data-de="Gute Quellen: Hähnchenbrust, Pute, Fisch (Lachs, Thunfisch), Eier, Magerquark, Skyr, Tofu, Linsen, Bohnen, Kichererbsen, Proteinpulver (Whey, Casein, pflanzlich).">Gute Quellen: Hähnchenbrust, Pute, Fisch (Lachs, Thunfisch), Eier, Magerquark, Skyr, Tofu, Linsen, Bohnen, Kichererbsen, Proteinpulver (Whey, Casein, pflanzlich).</li>
+                        <li data-en="Goal: Approx. 1.6 - 2.2 grams per kilogram of body weight." data-de="Ziel: Ca. 1.6 - 2.2 Gramm pro Kilogramm Körpergewicht.">Ziel: Ca. 1.6 - 2.2 Gramm pro Kilogramm Körpergewicht.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong data-en="Carbohydrates:" data-de="Kohlenhydrate:">Kohlenhydrate:</strong> <span data-en="Provide energy for training and daily life." data-de="Liefern Energie für Training und Alltag.">Liefern Energie für Training und Alltag.</span>
+                    <ul>
+                        <li data-en="Good sources: Whole grain products (bread, pasta, rice), oats, potatoes, sweet potatoes, quinoa, lots of vegetables and fruits." data-de="Gute Quellen: Vollkornprodukte (Brot, Nudeln, Reis), Haferflocken, Kartoffeln, Süßkartoffeln, Quinoa, viel Gemüse und Obst.">Gute Quellen: Vollkornprodukte (Brot, Nudeln, Reis), Haferflocken, Kartoffeln, Süßkartoffeln, Quinoa, viel Gemüse und Obst.</li>
+                        <li data-en="Choose complex carbohydrates over simple ones (sugar, white flour)." data-de="Wählt komplexe Kohlenhydrate über einfache (Zucker, Weißmehl).">Wählt komplexe Kohlenhydrate über einfache (Zucker, Weißmehl).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong data-en="Fats:" data-de="Fette:">Fette:</strong> <span data-en="Important for hormone production and general health." data-de="Wichtig für Hormonproduktion und allgemeine Gesundheit.">Wichtig für Hormonproduktion und allgemeine Gesundheit.</span>
+                    <ul>
+                        <li data-en="Good sources: Avocados, nuts (almonds, walnuts), seeds (chia, flaxseed), olive oil, fatty fish." data-de="Gute Quellen: Avocados, Nüsse (Mandeln, Walnüsse), Samen (Chia, Leinsamen), Olivenöl, fetter Fisch.">Gute Quellen: Avocados, Nüsse (Mandeln, Walnüsse), Samen (Chia, Leinsamen), Olivenöl, fetter Fisch.</li>
+                        <li data-en="Focus on healthy, unsaturated fats." data-de="Achtet auf gesunde, ungesättigte Fette.">Achtet auf gesunde, ungesättigte Fette.</li>
+                    </ul>
+                </li>
+                <li data-en="Hydration: Drink enough water throughout the day (at least 2-3 liters)." data-de="Hydration: Trinkt ausreichend Wasser über den Tag verteilt (mindestens 2-3 Liter).">Hydration: Trinkt ausreichend Wasser über den Tag verteilt (mindestens 2-3 Liter).</li>
+                <li data-en="Micronutrients: Ensure a varied diet with plenty of vegetables and fruits to get all important vitamins and minerals." data-de="Mikronährstoffe: Achtet auf eine vielfältige Ernährung mit viel Gemüse und Obst, um alle wichtigen Vitamine und Mineralstoffe zu bekommen.">Mikronährstoffe: Achtet auf eine vielfältige Ernährung mit viel Gemüse und Obst, um alle wichtigen Vitamine und Mineralstoffe zu bekommen.</li>
+                <li data-en="Meal Frequency: 3 main meals and 1-2 healthy snacks can help stabilize blood sugar levels and prevent cravings." data-de="Mahlzeitenfrequenz: 3 Hauptmahlzeiten und 1-2 gesunde Snacks können helfen, den Blutzuckerspiegel stabil zu halten und Heißhunger zu vermeiden.">Mahlzeitenfrequenz: 3 Hauptmahlzeiten und 1-2 gesunde Snacks können helfen, den Blutzuckerspiegel stabil zu halten und Heißhunger zu vermeiden.</li>
+                <li data-en="Avoid/Reduce: Highly processed foods, sugary drinks, fast food, excessive alcohol consumption." data-de="Vermeiden/Reduzieren: Stark verarbeitete Lebensmittel, zuckerhaltige Getränke, Fast Food, übermäßigen Alkoholkonsum.">Vermeiden/Reduzieren: Stark verarbeitete Lebensmittel, zuckerhaltige Getränke, Fast Food, übermäßigen Alkoholkonsum.</li>
+            </ul>
+            <p class="mt-4" data-en="Important for you (Weight Loss): Make sure to stay in a calorie deficit. Prioritize protein-rich and fiber-rich foods to stay full." data-de="Wichtig für dich (Abnehmen): Achte darauf, im Kaloriendefizit zu bleiben. Priorisiere proteinreiche und ballaststoffreiche Lebensmittel, um satt zu bleiben.">Wichtig für dich (Abnehmen): Achte darauf, im Kaloriendefizit zu bleiben. Priorisiere proteinreiche und ballaststoffreiche Lebensmittel, um satt zu bleiben.</p>
+            <p data-en="Important for your brother (Muscle Gain): Make sure to achieve a slight calorie surplus to support muscle growth. Ensure that the additional calories come from nutrient-dense sources." data-de="Wichtig für deinen Bruder (Muskelaufbau): Achte darauf, einen leichten Kalorienüberschuss zu erzielen, um Muskelwachstum zu unterstützen. Stelle sicher, dass die zusätzlichen Kalorien aus nährstoffreichen Quellen kommen.">Wichtig für deinen Bruder (Muskelaufbau): Achte darauf, einen leichten Kalorienüberschuss zu erzielen, um Muskelwachstum zu unterstützen. Stelle sicher, dass die zusätzlichen Kalorien aus nährstoffreichen Quellen kommen.</p>
+
+            <h3 class="mt-4" data-en="Meal Planning & Dish Ideas" data-de="Essensplanung & Gerichtideen">Essensplanung & Gerichtideen</h3>
+            <p data-en="To make planning easier, here are some versatile meal ideas. Adjust portion sizes according to your individual calorie goals." data-de="Um die Planung zu erleichtern, hier einige vielseitige Gerichtideen. Passt die Portionsgrößen an eure individuellen Kalorienziele an.">Um die Planung zu erleichtern, hier einige vielseitige Gerichtideen. Passt die Portionsgrößen an eure individuellen Kalorienziele an.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-semibold text-lg" data-en="Breakfast Ideas (High Protein & Fiber)" data-de="Frühstücksideen (Protein- & Ballaststoffreich)">Frühstücksideen (Protein- & Ballaststoffreich)</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li data-en="Oatmeal with protein powder, berries, and nuts." data-de="Haferflocken mit Proteinpulver, Beeren und Nüssen.">Haferflocken mit Proteinpulver, Beeren und Nüssen.</li>
+                        <li data-en="Scrambled eggs with vegetables (spinach, peppers) and a slice of whole grain bread." data-de="Rührei mit Gemüse (Spinat, Paprika) und einer Scheibe Vollkornbrot.">Rührei mit Gemüse (Spinat, Paprika) und einer Scheibe Vollkornbrot.</li>
+                        <li data-en="Greek yogurt/Skyr with fruit and a sprinkle of seeds (chia, flax)." data-de="Griechischer Joghurt/Skyr mit Obst und einer Prise Samen (Chia, Leinsamen).">Griechischer Joghurt/Skyr mit Obst und einer Prise Samen (Chia, Leinsamen).</li>
+                        <li data-en="Whole grain toast with avocado and a poached egg." data-de="Vollkorntoast mit Avocado und einem pochierten Ei.">Vollkorntoast mit Avocado und einem pochierten Ei.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg" data-en="Lunch/Dinner Ideas (Balanced & Filling)" data-de="Mittag-/Abendessenideen (Ausgewogen & Sättigend)">Mittag-/Abendessenideen (Ausgewogen & Sättigend)</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li data-en="Chicken breast with quinoa/brown rice and mixed steamed vegetables." data-de="Hähnchenbrust mit Quinoa/Vollkornreis und gemischtem gedämpftem Gemüse.">Hähnchenbrust mit Quinoa/Vollkornreis und gemischtem gedämpftem Gemüse.</li>
+                        <li data-en="Salmon fillet with sweet potato and broccoli." data-de="Lachsfilet mit Süßkartoffel und Brokkoli.">Lachsfilet mit Süßkartoffel und Brokkoli.</li>
+                        <li data-en="Lentil stew with whole grain bread." data-de="Linsen-Eintopf mit Vollkornbrot.">Linsen-Eintopf mit Vollkornbrot.</li>
+                        <li data-en="Tofu/tempeh stir-fry with a variety of vegetables and whole grain noodles." data-de="Tofu/Tempeh-Pfanne mit viel Gemüse und Vollkornnudeln.">Tofu/Tempeh-Pfanne mit viel Gemüse und Vollkornnudeln.</li>
+                        <li data-en="Big salad with grilled chicken/chickpeas, mixed greens, cucumber, tomatoes, and a light vinaigrette." data-de="Großer Salat mit gegrilltem Hähnchen/Kichererbsen, Blattsalaten, Gurke, Tomaten und einem leichten Vinaigrette-Dressing.">Großer Salat mit gegrilltem Hähnchen/Kichererbsen, Blattsalaten, Gurke, Tomaten und einem leichten Vinaigrette-Dressing.</li>
+                        <li data-en="Lean beef stir-fry with brown rice and snow peas." data-de="Mageres Rindfleisch-Geschnetzeltes mit braunem Reis und Zuckerschoten.">Mageres Rindfleisch-Geschnetzeltes mit braunem Reis und Zuckerschoten.</li>
+                        <li data-en="Homemade whole grain pizza with lots of vegetables and lean ham/turkey breast." data-de="Selbstgemachte Vollkornpizza mit viel Gemüse und magerem Schinken/Putenbrust.">Selbstgemachte Vollkornpizza mit viel Gemüse und magerem Schinken/Putenbrust.</li>
+                    </ul>
+                </div>
+            </div>
+            <h4 class="font-semibold text-lg mt-4" data-en="Snack Ideas" data-de="Snack-Ideen">Snack-Ideen</h4>
+            <ul class="list-disc list-inside ml-4">
+                <li data-en="A handful of almonds/walnuts." data-de="Eine Handvoll Mandeln/Walnüsse.">Eine Handvoll Mandeln/Walnüsse.</li>
+                <li data-en="Apple slices with peanut butter." data-de="Apfelspalten mit Erdnussbutter.">Apfelspalten mit Erdnussbutter.</li>
+                <li data-en="Rice cakes with cottage cheese." data-de="Reiswaffeln mit Hüttenkäse.">Reiswaffeln mit Hüttenkäse.</li>
+                <li data-en="Protein shake with water or unsweetened plant milk." data-de="Proteinshake mit Wasser oder ungesüßter Pflanzenmilch.">Proteinshake mit Wasser oder ungesüßter Pflanzenmilch.</li>
+                <li data-en="Vegetable sticks (carrots, cucumber) with hummus." data-de="Gemüsesticks (Karotten, Gurke) mit Hummus.">Gemüsesticks (Karotten, Gurke) mit Hummus.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2 data-en="Tracking Progress" data-de="Fortschritt verfolgen">Fortschritt verfolgen</h2>
+            <p data-en="Consistent tracking helps you understand your body and make informed adjustments to your plan." data-de="Konsequentes Tracking hilft euch, euren Körper zu verstehen und fundierte Anpassungen an eurem Plan vorzunehmen.">Konsequentes Tracking hilft euch, euren Körper zu verstehen und fundierte Anpassungen an eurem Plan vorzunehmen.</p>
+
+            <h3 class="mt-4" data-en="What to Track:" data-de="Was ihr verfolgen solltet:">Was ihr verfolgen solltet:</h3>
+            <ul class="list-disc list-inside ml-4">
+                <li data-en="Weight: Once a week, at the same time (e.g., in the morning after using the restroom)." data-de="Gewicht: Einmal pro Woche zur gleichen Zeit (z.B. morgens nach dem Toilettengang)." data-de="Gewicht: Einmal pro Woche zur gleichen Zeit (z.B. morgens nach dem Toilettengang).">Gewicht: Einmal pro Woche zur gleichen Zeit (z.B. morgens nach dem Toilettengang).</li>
+                <li data-en="Measurements: Waist, chest, arm, thigh circumference every 2-4 weeks." data-de="Maße: Bauchumfang, Brustumfang, Armumfang etc. alle 2-4 Wochen messen." data-de="Maße: Bauchumfang, Brustumfang, Armumfang etc. alle 2-4 Wochen messen.">Maße: Bauchumfang, Brustumfang, Armumfang etc. alle 2-4 Wochen messen.</li>
+                <li data-en="Photos: Before-and-after photos can be very motivating." data-de="Fotos: Vorher-Nachher-Fotos können sehr motivierend sein.">Fotos: Vorher-Nachher-Fotos können sehr motivierend sein.</li>
+                <li data-en="Training Journal: Note your exercises, sets, repetitions, and weights (if applicable) to see your progress and make adjustments." data-de="Trainingsjournal: Notiert eure Übungen, Sätze, Wiederholungen und Gewichte (falls zutreffend), um euren Fortschritt zu sehen und Anpassungen vorzunehmen.">Trainingsjournal: Notiert eure Übungen, Sätze, Wiederholungen und Gewichte (falls zutreffend), um euren Fortschritt zu sehen und Anpassungen vorzunehmen.</li>
+                <li data-en="Feeling: Pay attention to how you feel – more energy, better mood, etc." data-de="Gefühl: Achtet darauf, wie ihr euch fühlt – mehr Energie, bessere Laune, etc.">Gefühl: Achtet darauf, wie ihr euch fühlt – mehr Energie, bessere Laune, etc.</li>
+            </ul>
+
+            <h3 class="mt-4" data-en="Example Tracking Table (You)" data-de="Beispiel-Tracking-Tabelle (Du)">Beispiel-Tracking-Tabelle (Du)</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr>
+                        <th data-en="Date" data-de="Datum">Datum</th>
+                        <th data-en="Weight (kg)" data-de="Gewicht (kg)">Gewicht (kg)</th>
+                        <th data-en="Waist (cm)" data-de="Bauch (cm)">Bauch (cm)</th>
+                        <th data-en="Notes" data-de="Notizen">Notizen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-en="Week 1" data-de="Woche 1">Woche 1</td>
+                        <td>94.0</td>
+                        <td>98</td>
+                        <td data-en="Start of plan" data-de="Start des Plans">Start des Plans</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Week 2" data-de="Woche 2">Woche 2</td>
+                        <td>93.5</td>
+                        <td>97</td>
+                        <td data-en="Good energy, training going well" data-de="Gute Energie, Training läuft gut">Gute Energie, Training läuft gut</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Week 3" data-de="Woche 3">Woche 3</td>
+                        <td>93.0</td>
+                        <td>96</td>
+                        <td data-en="Slightly hungry in the evenings" data-de="Abends etwas Hunger">Abends etwas Hunger</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Week 4" data-de="Woche 4">Woche 4</td>
+                        <td>92.8</td>
+                        <td>95</td>
+                        <td data-en="Increased protein intake" data-de="Proteinzufuhr erhöht">Proteinzufuhr erhöht</td>
+                    </tr>
+                    </tbody>
+            </table>
+
+            <h3 class="mt-4" data-en="Example Tracking Table (Brother)" data-de="Beispiel-Tracking-Tabelle (Bruder)">Beispiel-Tracking-Tabelle (Bruder)</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr>
+                        <th data-en="Date" data-de="Datum">Datum</th>
+                        <th data-en="Weight (kg)" data-de="Gewicht (kg)">Gewicht (kg)</th>
+                        <th data-en="Arm (cm)" data-de="Arm (cm)">Arm (cm)</th>
+                        <th data-en="Chest (cm)" data-de="Brust (cm)">Brust (cm)</th>
+                        <th data-en="Notes" data-de="Notizen">Notizen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-en="Week 1" data-de="Woche 1">Woche 1</td>
+                        <td>80.0</td>
+                        <td>38</td>
+                        <td>100</td>
+                        <td data-en="Start of plan" data-de="Start des Plans">Start des Plans</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Week 2" data-de="Woche 2">Woche 2</td>
+                        <td>80.5</td>
+                        <td>38.2</td>
+                        <td>100.5</td>
+                        <td data-en="Feeling stronger in workouts" data-de="Fühle mich stärker im Training">Fühle mich stärker im Training</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Week 3" data-de="Woche 3">Woche 3</td>
+                        <td>80.8</td>
+                        <td>38.5</td>
+                        <td>101</td>
+                        <td data-en="Increased calorie intake slightly" data-de="Kalorienzufuhr leicht erhöht">Kalorienzufuhr leicht erhöht</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </section>
+
+        <p class="text-center mt-6 text-gray-600" data-en="Remember that consistency is key. There will be ups and downs, but stick with it! Always consult a doctor or nutritionist for health concerns." data-de="Denkt daran, dass Konsistenz der Schlüssel ist. Es wird Höhen und Tiefen geben, aber bleibt dran! Konsultiert bei gesundheitlichen Bedenken immer einen Arzt oder Ernährungsberater.">
+            Denkt daran, dass Konsistenz der Schlüssel ist. Es wird Höhen und Tiefen geben, aber bleibt dran!
+            Konsultiert bei gesundheitlichen Bedenken immer einen Arzt oder Ernährungsberater.
+        </p>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-de]').forEach(element => {
+                if (lang === 'de') {
+                    element.textContent = element.dataset.de;
+                } else {
+                    element.textContent = element.dataset.en;
+                }
+            });
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.dataset.en;
+                } else {
+                    element.textContent = element.dataset.de;
+                }
+            });
+            document.documentElement.lang = lang; // Set lang attribute for HTML
+            document.title = document.querySelector('title').dataset[lang]; // Update title tag
+        }
+
+        // Set initial language based on browser preference or default to German
+        const userLang = navigator.language.split('-')[0];
+        if (userLang === 'en') {
+            setLanguage('en');
+        } else {
+            setLanguage('de'); // Default to German
+        }
+    </script>
+</body>
+</html>
